@@ -4,16 +4,9 @@
 
 ## Problem
 
-### Print I love CodeChef
+### Print Squares
 
-Write a C++ program that outputs the following message exactly as shown:
-
-```
-I 
-love 
-CodeChef
-
-```
+Write a program to output the squares (using multiplication) of numbers from 1 to 5 on separate lines.
 
 ### Sample 1:
 Input
@@ -24,9 +17,11 @@ Output
 ```
 
 ```
-I 
-love 
-CodeChef
+1 - 1  
+2 - 4  
+3 - 9  
+4 - 16  
+5 - 25  
 ```
 
 ## Solution
@@ -34,17 +29,17 @@ CodeChef
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-31T12:57:26.838Z  
+**Submitted:** 2026-08-31T13:01:05.279Z  
 
 ```c_cpp
-#include <iostream>
+ #include <iostream>
 using namespace std;
 
 int main() {
-    // Your code here
-cout<<"I"<<endl<<"Love"<<endl<<"CodeChef";
-    return 0;
+	// your code goes here
+cout<<"1 -"<< 1*1<< endl << "2-"<<2*2<<endl<<"3-"<<3*3<<endl<<"4-"<<4*4<<endl<<"5-"<<5*5 ; 
 }
+
 ```
 
 ---
