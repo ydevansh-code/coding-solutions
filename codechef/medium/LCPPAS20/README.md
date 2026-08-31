@@ -29,7 +29,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-31T13:01:09.112Z  
+**Submitted:** 2026-08-31T13:03:27.714Z  
 
 ```c_cpp
  #include <iostream>
@@ -37,7 +37,11 @@ using namespace std;
 
 int main() {
 	// your code goes here
-cout<<"1 -"<< 1*1<< endl << "2-"<<2*2<<endl<<"3-"<<3*3<<endl<<"4-"<<4*4<<endl<<"5-"<<5*5 ; 
+for(int i=1;i<=5;i++){
+    cout<<i<<"-"<<i*i<<endl;
+}
+return 0;
+
 }
 
 ```
