@@ -1,8 +1,7 @@
-#include <iostream>
+ #include <iostream>
 using namespace std;
 
 int main() {
-    // Your code here
-cout<<"I"<<endl<<"Love"<<endl<<"CodeChef";
-    return 0;
+	// your code goes here
+cout<<"1 -"<< 1*1<< endl << "2-"<<2*2<<endl<<"3-"<<3*3<<endl<<"4-"<<4*4<<endl<<"5-"<<5*5 ; 
 }
