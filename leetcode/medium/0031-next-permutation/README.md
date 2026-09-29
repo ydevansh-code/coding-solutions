@@ -54,9 +54,9 @@ Output: [1,5,1]
 ## Solution
 
 **Language:** C  
-**Runtime:** 0 ms  
-**Memory:** 8.5 MB  
-**Submitted:** 2026-09-29T21:22:19.647Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 11.6 MB (beats 47.10%)  
+**Submitted:** 2026-09-29T21:22:23.704Z  
 
 ```c
 void nextPermutation(int* nums, int numsSize) {
