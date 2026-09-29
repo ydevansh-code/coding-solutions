@@ -47,50 +47,69 @@ Output: [-1,-1]
 
 ## Solution
 
-**Language:** C++  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 17.7 MB (beats 20.21%)  
-**Submitted:** 2026-08-07T12:05:48.405Z  
+**Language:** C  
+**Runtime:** 0 ms  
+**Memory:** 8.5 MB  
+**Submitted:** 2026-09-29T21:24:23.657Z  
 
-```cpp
-class Solution {
-public:
-    vector<int> searchRange(vector<int>& nums, int target) {
-        int start = 0, end=nums.size()-1 , first = -1 , last = -1 , mid ; 
-        // first search 
-     while (start <= end) 
-     { mid = start + (end-start)/2;
-       if( nums[mid]== target)
-       { first = mid;
-       end = mid -1;
-       } else if (nums[mid]< target)
-       start = mid + 1; 
-       else 
-       end = mid - 1 ;
-     }
-     // first last 
-    start = 0; end = nums.size() - 1;
-      while (start <= end) 
-     { mid = start + (end-start)/2;
-       if( nums[mid]== target)
-       { last = mid;
-       start = mid +1 ;
-       } else if (nums[mid]< target)
-       start = mid + 1; 
-       else 
-       end = mid - 1 ;
-     }
-      vector<int>a(2);
-      a[0]=first;
-      a[1]=last;
-      return a;
+```c
+int findFirst(int* nums, int numsSize, int target) {
+    int left = 0;
+    int right = numsSize - 1;
+    int ans = -1;
 
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
 
-
-        // last search 
-        
+        if (nums[mid] == target) {
+            ans = mid;
+            right = mid - 1;   // Keep searching on the left
+        }
+        else if (nums[mid] < target) {
+            left = mid + 1;
+        }
+        else {
+            right = mid - 1;
+        }
     }
-};
+
+    return ans;
+}
+
+int findLast(int* nums, int numsSize, int target) {
+    int left = 0;
+    int right = numsSize - 1;
+    int ans = -1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+
+        if (nums[mid] == target) {
+            ans = mid;
+            left = mid + 1;   // Keep searching on the right
+        }
+        else if (nums[mid] < target) {
+            left = mid + 1;
+        }
+        else {
+            right = mid - 1;
+        }
+    }
+
+    return ans;
+}
+
+int* searchRange(int* nums, int numsSize, int target, int* returnSize) {
+
+    int* result = malloc(2 * sizeof(int));
+
+    *returnSize = 2;
+
+    result[0] = findFirst(nums, numsSize, target);
+    result[1] = findLast(nums, numsSize, target);
+
+    return result;
+}
 ```
 
 ---
