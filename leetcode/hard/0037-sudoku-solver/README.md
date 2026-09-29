@@ -37,9 +37,9 @@ Explanation: The input board is shown above and the only valid solution is show
 ## Solution
 
 **Language:** C  
-**Runtime:** 0 ms  
-**Memory:** 8.7 MB  
-**Submitted:** 2026-09-29T21:25:46.759Z  
+**Runtime:** 323 ms (beats 82.53%)  
+**Memory:** 9.6 MB (beats 22.56%)  
+**Submitted:** 2026-09-29T21:25:56.163Z  
 
 ```c
 #include <stdbool.h>
