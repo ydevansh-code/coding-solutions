@@ -1,25 +1,34 @@
 #include <stdlib.h>
 
-int compare(const void* a, const void* b) {
-    return (*(int*)a - *(int*)b);
+int compare(const void *a, const void *b) {
+    int x = *(const int *)a;
+    int y = *(const int *)b;
+
+    if (x < y)
+        return -1;
+    if (x > y)
+        return 1;
+    return 0;
 }
 
 int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes) {
 
     qsort(nums, numsSize, sizeof(int), compare);
 
-    int** result = malloc(numsSize * sizeof(int*));
-    *returnColumnSizes = malloc(numsSize * sizeof(int));
-
     *returnSize = 0;
+
+    int capacity = 10;
+
+    int** result = malloc(capacity * sizeof(int*));
+    *returnColumnSizes = malloc(capacity * sizeof(int));
 
     for (int i = 0; i < numsSize - 2; i++) {
 
-        // Skip duplicate first numbers
+        // Skip duplicate nums[i]
         if (i > 0 && nums[i] == nums[i - 1])
             continue;
 
-        // Since array is sorted, no possible triplet
+        // Since array is sorted
         if (nums[i] > 0)
             break;
 
@@ -32,6 +41,15 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 
             if (sum == 0) {
 
+                // Increase memory if needed
+                if (*returnSize == capacity) {
+                    capacity *= 2;
+
+                    result = realloc(result, capacity * sizeof(int*));
+                    *returnColumnSizes =
+                        realloc(*returnColumnSizes, capacity * sizeof(int));
+                }
+
                 result[*returnSize] = malloc(3 * sizeof(int));
 
                 result[*returnSize][0] = nums[i];
@@ -41,15 +59,17 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
                 (*returnColumnSizes)[*returnSize] = 3;
                 (*returnSize)++;
 
-                // Skip duplicates
-                while (left < right && nums[left] == nums[left + 1])
-                    left++;
-
-                while (left < right && nums[right] == nums[right - 1])
-                    right--;
-
+                // Move both pointers
                 left++;
                 right--;
+
+                // Skip duplicate left values
+                while (left < right && nums[left] == nums[left - 1])
+                    left++;
+
+                // Skip duplicate right values
+                while (left < right && nums[right] == nums[right + 1])
+                    right--;
             }
 
             else if (sum < 0) {
