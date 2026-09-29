@@ -49,9 +49,9 @@ Output:
 ## Solution
 
 **Language:** C  
-**Runtime:** 0 ms  
-**Memory:** 8.7 MB  
-**Submitted:** 2026-09-29T21:28:59.854Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 12 MB (beats 62.83%)  
+**Submitted:** 2026-09-29T21:29:05.062Z  
 
 ```c
 #include <stdlib.h>
