@@ -63,9 +63,9 @@ Explanation: Same as Example 1, except with the 5 in the top left corner being m
 ## Solution
 
 **Language:** C  
-**Runtime:** 0 ms  
-**Memory:** 8.7 MB  
-**Submitted:** 2026-09-29T21:24:57.656Z  
+**Runtime:** 2 ms (beats 11.46%)  
+**Memory:** 11.2 MB (beats 5.19%)  
+**Submitted:** 2026-09-29T21:25:04.997Z  
 
 ```c
 bool isValidSudoku(char** board, int boardSize, int* boardColSize) {
