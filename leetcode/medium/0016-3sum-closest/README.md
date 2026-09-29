@@ -43,9 +43,9 @@ Explanation: The sum that is closest to the target is 0. (0 + 0 + 0 = 0).
 ## Solution
 
 **Language:** C  
-**Runtime:** 0 ms  
-**Memory:** 8.4 MB  
-**Submitted:** 2026-09-29T21:20:41.335Z  
+**Runtime:** 17 ms (beats 29.16%)  
+**Memory:** 9.1 MB (beats 16.05%)  
+**Submitted:** 2026-09-29T21:20:45.941Z  
 
 ```c
 #include <stdlib.h>
