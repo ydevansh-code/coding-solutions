@@ -1,74 +1,81 @@
 #include <stdlib.h>
 #include <string.h>
 
-void sortString(char *str) {
-    int i, j;
-    char temp;
-
-    for (i = 0; str[i] != '\0'; i++) {
-        for (j = i + 1; str[j] != '\0'; j++) {
-            if (str[i] > str[j]) {
-                temp = str[i];
-                str[i] = str[j];
-                str[j] = temp;
-            }
-        }
-    }
-}
-
-char*** groupAnagrams(char** strs, int strsSize, int* returnSize, int** returnColumnSizes) {
+char*** groupAnagrams(char** strs, int strsSize,
+                      int* returnSize, int** returnColumnSizes) {
 
     char*** result = malloc(strsSize * sizeof(char**));
-    int* columns = malloc(strsSize * sizeof(int));
+    int* columnSizes = malloc(strsSize * sizeof(int));
+
+    // Store frequency of 26 letters for every group
+    int (*keys)[26] = malloc(strsSize * sizeof(*keys));
 
     int groupCount = 0;
 
     for (int i = 0; i < strsSize; i++) {
 
-        // Make a sorted copy of the current string
-        char key[101];
-        strcpy(key, strs[i]);
-        sortString(key);
+        int count[26] = {0};
+
+        // Count letters
+        for (int j = 0; strs[i][j] != '\0'; j++) {
+            count[strs[i][j] - 'a']++;
+        }
 
         int found = -1;
 
-        // Check whether this anagram group already exists
+        // Check whether this frequency pattern already exists
         for (int g = 0; g < groupCount; g++) {
 
-            if (strcmp(result[g][0], key) == 0) {
+            int same = 1;
+
+            for (int k = 0; k < 26; k++) {
+                if (keys[g][k] != count[k]) {
+                    same = 0;
+                    break;
+                }
+            }
+
+            if (same) {
                 found = g;
                 break;
             }
         }
 
+        // Create new group
         if (found == -1) {
 
-            // Create a new group
             found = groupCount;
+
+            for (int k = 0; k < 26; k++) {
+                keys[found][k] = count[k];
+            }
 
             result[found] = malloc(strsSize * sizeof(char*));
 
-            // Store the first string
             result[found][0] = malloc(strlen(strs[i]) + 1);
             strcpy(result[found][0], strs[i]);
 
-            columns[found] = 1;
+            columnSizes[found] = 1;
+
             groupCount++;
+        }
 
-        } else {
+        // Add to existing group
+        else {
 
-            // Add string to existing group
-            int size = columns[found];
+            int pos = columnSizes[found];
 
-            result[found][size] = malloc(strlen(strs[i]) + 1);
-            strcpy(result[found][size], strs[i]);
+            result[found][pos] = malloc(strlen(strs[i]) + 1);
+            strcpy(result[found][pos], strs[i]);
 
-            columns[found]++;
+            columnSizes[found]++;
         }
     }
 
+    free(keys);
+
     *returnSize = groupCount;
-    *returnColumnSizes = columns;
+    *returnColumnSizes = columnSizes;
 
     return result;
 }
