@@ -42,9 +42,9 @@ Output: 1
 ## Solution
 
 **Language:** C  
-**Runtime:** 0 ms  
-**Memory:** 8.5 MB  
-**Submitted:** 2026-09-29T21:17:53.095Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 14.7 MB (beats 83.42%)  
+**Submitted:** 2026-09-29T21:18:03.197Z  
 
 ```c
 int maxArea(int* height, int heightSize) {
