@@ -44,9 +44,9 @@ Output: 0
 ## Solution
 
 **Language:** C  
-**Runtime:** 3 ms  
-**Memory:** 8.8 MB  
-**Submitted:** 2026-09-29T21:23:02.463Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 9.3 MB (beats 86.84%)  
+**Submitted:** 2026-09-29T21:23:07.331Z  
 
 ```c
 int longestValidParentheses(char* s) {
