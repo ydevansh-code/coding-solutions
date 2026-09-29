@@ -41,9 +41,9 @@ Output: [[2,2,2,2]]
 ## Solution
 
 **Language:** C  
-**Runtime:** 0 ms  
-**Memory:** 8.7 MB  
-**Submitted:** 2026-09-29T21:21:35.514Z  
+**Runtime:** 20 ms (beats 76.02%)  
+**Memory:** 12 MB (beats 86.19%)  
+**Submitted:** 2026-09-29T21:21:40.063Z  
 
 ```c
 #include <stdlib.h>
