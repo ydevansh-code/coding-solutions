@@ -36,9 +36,9 @@ Output: 9
 ## Solution
 
 **Language:** C  
-**Runtime:** 0 ms  
-**Memory:** 8.5 MB  
-**Submitted:** 2026-09-29T21:30:08.850Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 10.5 MB (beats 10.52%)  
+**Submitted:** 2026-09-29T21:30:13.936Z  
 
 ```c
 int trap(int* height, int heightSize) {
