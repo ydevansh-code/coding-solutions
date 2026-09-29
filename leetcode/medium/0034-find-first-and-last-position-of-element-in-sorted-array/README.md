@@ -48,9 +48,9 @@ Output: [-1,-1]
 ## Solution
 
 **Language:** C  
-**Runtime:** 0 ms  
-**Memory:** 8.5 MB  
-**Submitted:** 2026-09-29T21:24:23.657Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 10.6 MB (beats 35.72%)  
+**Submitted:** 2026-09-29T21:24:28.774Z  
 
 ```c
 int findFirst(int* nums, int numsSize, int target) {
