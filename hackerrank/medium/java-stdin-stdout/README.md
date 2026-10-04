@@ -37,7 +37,7 @@ To make the problem easier, a portion of the code is already provided in the edi
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-04T18:35:08.795Z  
+**Submitted:** 2026-10-04T18:35:10.668Z  
 
 ```java
 import java.util.Scanner;
