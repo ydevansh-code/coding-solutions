@@ -50,7 +50,7 @@ Just write the MyRegex class which contains a String $pattern$. The string shoul
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-04T18:38:41.351Z  
+**Submitted:** 2026-10-04T18:38:41.915Z  
 
 ```java
 
