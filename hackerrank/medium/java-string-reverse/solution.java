@@ -1,20 +1,21 @@
+import java.io.*;
+import java.util.*;
 
+public class Solution {
 
-    public static String getSmallestAndLargest(String s, int k) {
-        String smallest = s.substring(0, k);
-        String largest = s.substring(0, k);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        for (int i = 1; i <= s.length() - k; i++) {
-            String current = s.substring(i, i + k);
+        String A = sc.next();
 
-            if (current.compareTo(smallest) < 0) {
-                smallest = current;
-            }
+        String reverse = new StringBuilder(A).reverse().toString();
 
-            if (current.compareTo(largest) > 0) {
-                largest = current;
-            }
+        if (A.equals(reverse)) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
         }
 
-        return smallest + "\n" + largest;
+        sc.close();
     }
+}
